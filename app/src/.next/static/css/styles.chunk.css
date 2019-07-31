@@ -1,0 +1,47 @@
+a {
+  text-decoration: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+textarea:focus, input:focus {
+  outline: none; }
+
+@font-face {
+  font-family: 'hp-simplified-light';
+  src: url(../../static/fonts/hp-simplified-light.d5ba5439323a8a0579a67b420b062c1b.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'hp-simplified-regular';
+  src: url(../../static/fonts/hp-simplified-regular.04d00751c108657e7d905521a7a1747a.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+input, textarea {
+  font-family: 'hp-simplified-light'; }
+
+body {
+  margin: 0;
+  font-size: 16px;
+  color: #DFDFDF;
+  font-family: "hp-simplified-light";
+  background-color: #DFDFDF; }
+
+html, body {
+  height: 100%; }
+
+#__next {
+  height: 100%; }
+
+.iframe .cms-header {
+  display: none; }
+
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/

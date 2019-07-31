@@ -1,0 +1,15 @@
+{
+  "watch": [
+    "**/app/server/**/*.js",
+    "**/app/src/next.config.js",
+    "**/app/tools/webpack/**/*.js",
+    ".app.config.js",
+    "**/app/src/*babel*.js",
+    "**/package.json",
+    "**/yarn.lock",
+    "**/nodemon.json",
+    "postcss.config.js",
+    "ecosystem.config.js"
+  ],
+  "ignore": [".git/**", "node_modules/**/node_modules", "app/src/.next/**"]
+}

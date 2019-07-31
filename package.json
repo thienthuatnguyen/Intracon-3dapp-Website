@@ -1,0 +1,79 @@
+{
+  "name": "dmi-fe",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Murat Karacam",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "app/*",
+    "app/tools/eslint-config-dmi"
+  ],
+  "engines": {
+    "node": ">=10.15"
+  },
+  "browser": {
+    "dmi-fe-server": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=local yarn install && yarn nodemon:go:dev",
+    "dev:nocache": "yarn clean:cache && yarn install && yarn nodemon:go:dev",
+    "dev:reset": "yarn clean:all && yarn install && yarn nodemon:go:dev",
+    "dev:clean_windows": "yarn clean:all && yarn dev:windows",
+    "debug": "cross-env DEBUG=*,-nodemon:watch*,-snapdragon:*,-eslint*,-babel* yarn nodemon:go:debug",
+    "build": "yarn lint:js && yarn build:job",
+    "build:job": "yarn clean:all && yarn themes:build && yarn build:app",
+    "build:app": "cross-env NODE_ENV=production environment=build yarn --cwd app/src next build",
+    "build:dev": "yarn clean:next_cache && cross-env x_app_debug=true yarn build:job",
+    "build:debug": "yarn clean:all && yarn install --check-files && cross-env x_app_debug=true yarn build:job",
+    "start": "pm2-runtime ecosystem.config.js --env production --formatted",
+    "start:dev": "cross-env NODE_ENV=production environment=dev yarn node:go:debug --api-cache",
+    "start:debug": "cross-env NODE_ENV=production DEBUG=*,-nodemon:watch*,-snapdragon:*,-eslint*,-babel* yarn node:go:debug",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lint:js": "eslint app -c ./.eslintrc.js",
+    "lint:style": "stylelint app/src",
+    "docker:build": "scripts/docker-build-image.sh",
+    "docker:restart": "scripts/docker-restart-image.sh",
+    "docker:follow": "docker logs dmi-grandbasel-fe --follow",
+    "docker:bash": "docker exec -it dmi-grandbasel-fe /bin/bash",
+    "pm2:logs": "pm2 logs",
+    "pm2:stop": "pm2 stop all",
+    "pm2:reload": "pm2 reload all",
+    "pm2:monitor": "pm2 monit",
+    "clean:all": "yarn clean:node_modules && yarn clean:next_cache",
+    "clean:cache": "yarn clean:babel_cache && yarn clean:npm_cache && yarn clean:next_cache",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:npm_cache": "rimraf node_modules/.cache",
+    "clean:babel_cache": "rimraf node_modules/.cache/babel-loader",
+    "clean:next_cache": "rimraf app/app/.next",
+    "nodemon:go": "nodemon app/server",
+    "nodemon:go:dev": "cross-env NODE_ENV=development nodemon app/server",
+    "node:go": "cross-env NODE_ENV=production environment=production node app/server",
+    "node:go:debug": "cross-env x_app_debug=true node app/server",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "./node_modules/.bin/eslint -c ./.eslintrc.js --fix --format=codeframe",
+      "stylelint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.4.3",
+    "react-autosuggest": "^9.4.3"
+  },
+  "dependencies": {
+    "date-fns": "^1.30.1",
+    "ics-to-json": "^1.0.0",
+    "nanoid": "^2.0.3",
+    "rbx": "^2.1.0",
+    "react-pdf": "^4.0.5",
+    "react-slick": "^0.24.0",
+    "react-spinners": "^0.5.4",
+    "react-thumbnail-zoom": "^1.0.2",
+    "slick-carousel": "^1.8.1"
+  }
+}

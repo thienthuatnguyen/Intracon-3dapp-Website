@@ -1,0 +1,15 @@
+version: '2'
+services:
+  dmi-grandbasel-fe:
+    image: nexus.dminc-gtc.com:50000/dmi-grandbasel-fe:${version}
+    ports:
+      - '3000:3000'
+    environment:
+      - waitForAddresses=dmi-gb-site-test.dminc-intl.com:443
+      - waitForAddressesTimeout=30
+      - dmi_microservices_url=https://dmi-gb-site-test.dminc-intl.com
+      - NODE_ENV=production
+      - environment=test
+    # This volume allows the container to execute the code in the local git clone, useful for development, not used in Azure.
+    volumes:
+      - ../:/usr/src/app/

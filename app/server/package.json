@@ -1,0 +1,21 @@
+{
+  "name": "dmi-fe-server",
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.15"
+  },
+  "dependencies": {
+    "apicache": "^1.4.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
+    "kleur": "^2.0.2",
+    "morgan": "^1.9.1",
+    "path-match": "^1.2.4",
+    "pm2": "^3.4.1",
+    "universal-cookie-express": "^3.1.0",
+    "winston": "^3.2.1"
+  }
+}

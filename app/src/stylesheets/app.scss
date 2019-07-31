@@ -1,0 +1,39 @@
+@import './variables';
+@import './normalize';
+
+@font-face {
+  font-family: 'hp-simplified-light';
+  src: url('../static/fonts/hp-simplified-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hp-simplified-regular';
+  src: url('../static/fonts/hp-simplified-regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+input, textarea {
+  font-family: 'hp-simplified-light';
+}
+body {
+  margin: 0;
+  font-size: $bodySize;
+  color: $colorBody;
+  font-family: $bodyFont;
+  background-color: $colorBody;
+}
+html, body {
+  height: 100%;
+  
+}
+#__next {
+  height: 100%;
+}
+.iframe {
+  .cms-header {
+    display: none;
+  }
+}

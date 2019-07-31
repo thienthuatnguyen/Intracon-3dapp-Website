@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      // Application Source Code
+      "name": "Web App",
+      "path": "app/src"
+    },
+    {
+      // Express HTTP Server with Next.js
+      "name": "Server",
+      "path": "app/server"
+    },
+    {
+      // Development & Build Tools
+      "name": "Tools",
+      "path": "app/tools"
+    },
+    {
+      // DMI's Code Standard Config for ESLint (to be moved to its own repo)
+      "name": "eslint-config-dmi",
+      "path": "app/tools/eslint-config-dmi"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.rulers": [120],
+    "npm.packageManager": "yarn",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.watcherExclude": {
+      "**/.history/**": true,
+      "**/.git/**": true,
+      "**/node_modules/**": true,
+      "**/.next/**": true
+    },
+    "search.exclude": {
+      "**/.history/**": true,
+      "**/.git/**": true,
+      "**/node_modules/**": true,
+      "**/.next/**": true,
+      "**/app/theme/.dist/**": true
+    },
+    "css_peek.exclude": ["**/.history", "**/.git", "**/.next", "**/node_modules", "**/.tmp"],
+    "less.scannerExclude": ["**/.history", "**/.git", "**/.next", "**/node_modules", "**/.tmp"],
+    "scss.scannerExclude": ["**/.history", "**/.git", "**/.next", "**/node_modules", "**/.tmp"],
+    "eslint.workingDirectories": ["./app/server", "./app/src", "./app/tools"],
+    "eslint.nodePath": "node_modules",
+    "eslint.packageManager": "yarn"
+  }
+}
