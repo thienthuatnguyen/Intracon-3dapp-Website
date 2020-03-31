@@ -13,7 +13,7 @@
     "@zeit/next-sass": "^1.0.1",
     "dayjs": "^1.8.11",
     "formik": "^1.5.1",
-    "next": "8.0.4-canary.1",
+    "next": "9.3.3",
     "nprogress": "^0.2.0",
     "moment": "^2.24.0",
     "prettyjson": "^1.2.1",
