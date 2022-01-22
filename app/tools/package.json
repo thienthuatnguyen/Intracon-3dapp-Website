@@ -31,7 +31,7 @@
     "lodash": "^4.17.11",
     "markdown-it": "^8.4.2",
     "memoize-one": "^5.0.2",
-    "nanoid": "^2.0.1",
+    "nanoid": "^3.1.31",
     "next-compose-plugins": "^2.1.1",
     "nodemon": "^1.18.10",
     "postcss-easy-import": "^3.0.0",
