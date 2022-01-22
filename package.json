@@ -68,7 +68,7 @@
   "dependencies": {
     "date-fns": "^1.30.1",
     "ics-to-json": "^1.0.0",
-    "nanoid": "^2.0.3",
+    "nanoid": "^3.1.31",
     "rbx": "^2.1.0",
     "react-pdf": "^4.0.5",
     "react-slick": "^0.24.0",
